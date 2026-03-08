@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Countdown</title>
+    <meta charset="UTF-8">
+    <script>
+        let timeLeft = 15;
+
+        function startCountdown() {
+            let timer = setInterval(function() {
+                document.getElementById("count").textContent = timeLeft;
+                timeLeft--;
+
+                if (timeLeft < 0) {
+                    clearInterval(timer);
+                    window.location.href = "https://example.com"; // change this
+                }
+            }, 1000);
+        }
+
+        window.onload = startCountdown;
+    </script>
+</head>
+<body style="text-align:center; font-family:Arial; margin-top:100px;">
+    <h1>Please wait...</h1>
+    <h2>Redirecting in <span id="count">15</span> seconds</h2>
+</body>
+</html>
